@@ -162,7 +162,7 @@ void board() { //whole board except lines, interactive functions, and player
 }
 
 void lines() { //makes it easier to find coords
-  line(100, 0, 100, 800); //vert
+  /*line(100, 0, 100, 800); //vert
   line(200, 0, 200, 800);
   line(300, 0, 300, 800);
   line(400, 0, 400, 800);
@@ -177,6 +177,6 @@ void lines() { //makes it easier to find coords
   line(0, 400, 800, 400);
   line(0, 500, 800, 500);
   line(0, 600, 800, 600);
-  line(0, 700, 800, 700);
+  line(0, 700, 800, 700);*/
   line(0, 800, 800, 800);
 }
