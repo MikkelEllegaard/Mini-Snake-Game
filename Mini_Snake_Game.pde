@@ -10,7 +10,6 @@ void setup () {
 void draw () {
   board(); //has the fruits
   lines(); //makes it easier to find coords
-  mousePressed(); //The game. Score, movement, fruit-counter etc.
   player(); //the player character
 }
 
@@ -20,7 +19,7 @@ void player() {
   rect(0, 0, 100, 100); //player
 }
 
-void mousePressed() { //so far the player moves, but draws a line and ignores player space boundaries
+void mousePressed() { //The game. Score, movement, fruit-counter etc.
   int x = mouseX;
   int y = mouseY;
 
