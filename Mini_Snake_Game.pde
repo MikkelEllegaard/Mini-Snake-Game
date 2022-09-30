@@ -1,11 +1,16 @@
-
 int Ppx = 0;
 int Ppy = 0;
+int Fe = 0;
 boolean R1e = false;
 boolean R2e = false;
 boolean R3e = false;
 boolean R4e = false;
 boolean R5e = false;
+boolean C1 = false;
+boolean C2 = false;
+boolean C3 = false;
+boolean C4 = false;
+boolean C5 = false;
 
 void setup () {
   size(800, 1050);
@@ -44,9 +49,57 @@ void mousePressed() { //has player movement, fruit counter, reset button etc.
     if (Ppx < 700) Ppx = Ppx + 100;
     else if (Ppx == 700) Ppx = 700;
   }
+  
+  if (x>100 && x<250 && y>850 && y<925) { //resets the game
+    Ppx = 0;
+    Ppy = 0;
+    Fe = 0;
+    R1e = false;
+    R2e = false;
+    R3e = false;
+    R4e = false;
+    R5e = false;
+    C1 = false;
+    C2 = false;
+    C3 = false;
+    C4 = false;
+    C5 = false;
+  }
 }
 
-void board() { //whole board except lines, functions, and player
+void board() { //whole board except lines, interactive functions, and player
+  noFill(); //RESET button
+  rect(100,850,150,75);
+  fill(0);
+  text("RESET",127,900);
+  
+  noFill(); //fruit counter
+  rect(510,850,250,75);
+  fill(0);
+  text("Fruits Eaten:",525,900);
+  text(Fe,725,900);
+  
+  if(R1e == true && C1 == false) {//increases Fruits Eaten counter
+    Fe = Fe+1;
+    C1 = true;
+  }
+  if(R2e == true && C2 == false) {
+    Fe = Fe+1;
+    C2 = true;
+  }
+  if(R3e == true && C3 == false) {
+    Fe = Fe+1;
+    C3 = true;
+  }
+  if(R4e == true && C4 == false) {
+    Fe = Fe+1;
+    C4 = true;
+  }
+  if(R5e == true && C5 == false) {
+    Fe = Fe+1;
+    C5 = true;
+  }
+
   if (R1e == false) {
     fill(255, 0, 0);
     if (Ppx == 200 && Ppy == 300) {
