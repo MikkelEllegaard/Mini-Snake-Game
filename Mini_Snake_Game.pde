@@ -20,7 +20,7 @@ void player() {
   rect(0, 0, 100, 100); //player
 }
 
-void mousePressed() {
+void mousePressed() { //so far the player moves, but draws a line and ignores player space boundaries
   int x = mouseX;
   int y = mouseY;
 
