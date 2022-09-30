@@ -1,6 +1,11 @@
 
 int Ppx = 0;
 int Ppy = 0;
+boolean R1e = false;
+boolean R2e = false;
+boolean R3e = false;
+boolean R4e = false;
+boolean R5e = false;
 
 void setup () {
   size(800, 1050);
@@ -14,12 +19,12 @@ void draw () {
 }
 
 void player() {
-  translate(Ppx,Ppy); //moves the player
+  translate(Ppx, Ppy); //moves the player
   fill(0, 0, 255);
   rect(0, 0, 100, 100); //player
 }
 
-void mousePressed() { //has player movement, fruit counter, reset button etc. 
+void mousePressed() { //has player movement, fruit counter, reset button etc.
   int x = mouseX;
   int y = mouseY;
 
@@ -42,12 +47,50 @@ void mousePressed() { //has player movement, fruit counter, reset button etc.
 }
 
 void board() { //whole board except lines, functions, and player
-  fill(255, 0, 0); //colors stay the same for now
-  rect(200, 300, 100, 100); //rect 1
-  rect(100, 600, 100, 100); //rect 2
-  rect(600, 400, 100, 100); //rect 3
-  rect(400, 500, 100, 100); //rect 4
-  rect(400, 100, 100, 100); //rect 5
+  if (R1e == false) {
+    fill(255, 0, 0);
+    if (Ppx == 200 && Ppy == 300) {
+      noFill();
+      R1e = true;
+    }
+    rect(200, 300, 100, 100); //rect 1
+  }
+
+  if (R2e == false) {
+    fill(255, 0, 0);
+    if (Ppx == 100 && Ppy == 600) {
+      noFill();
+      R2e = true;
+    }
+    rect(100, 600, 100, 100); //rect 2
+  }
+
+  if (R3e == false) {
+    fill(255, 0, 0);
+    if (Ppx == 600 && Ppy == 400) {
+      noFill();
+      R3e = true;
+    }
+    rect(600, 400, 100, 100); //rect 3
+  }
+
+  if (R4e == false) {
+    fill(255, 0, 0);
+    if (Ppx == 400 && Ppy == 500) {
+      noFill();
+      R4e = true;
+    }
+    rect(400, 500, 100, 100); //rect 4
+  }
+
+  if (R5e == false) {
+    fill(255, 0, 0);
+    if (Ppx == 400 && Ppy == 100) {
+      noFill();
+      R5e = true;
+    }
+    rect(400, 100, 100, 100); //rect 5
+  }
 
   noFill(); //buttons
   strokeWeight(4);
