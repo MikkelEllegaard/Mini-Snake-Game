@@ -4,10 +4,10 @@ int Ppy = 0;
 
 void setup () {
   size(800, 1050);
-  background(255);
 }
 
 void draw () {
+  background(255);
   board(); //has the fruits
   lines(); //makes it easier to find coords
   player(); //the player character
@@ -19,25 +19,25 @@ void player() {
   rect(0, 0, 100, 100); //player
 }
 
-void mousePressed() { //The game. Score, movement, fruit-counter etc.
+void mousePressed() { //has player movement, fruit counter, reset button etc. 
   int x = mouseX;
   int y = mouseY;
 
   if (x>350 && x<450 && y>850 && y<950) { //moves player 100 up if not at top already
-    if (Ppy == 0) Ppy = 0;
-    Ppy = Ppy - 100;
+    if (Ppy > 0) Ppy = Ppy - 100;
+    else if (Ppy == 0) Ppy = 0;
   }
   if (x>350 && x<450 && y>950 && y<1050) { //moves player 100 down if not at bottom already
-    if (Ppy == 700) Ppy = 700;
-    Ppy = Ppy + 100;
+    if (Ppy < 700) Ppy = Ppy + 100;
+    else if (Ppy == 700) Ppy = 700;
   }
   if (x>250 && x<350 && y>950 && y<1050) { //moves player 100 left if not already full left
-    if (Ppx == 0) Ppx = 0;
-    Ppx = Ppx - 100;
+    if (Ppx > 0) Ppx = Ppx - 100;
+    else if (Ppx == 0) Ppx = 0;
   }
   if (x>450 && x<550 && y>950 && y<1050) { //moves player 100 right if not already full right
-    if (Ppx == 700) Ppx = 700;
-    Ppx = Ppx + 100;
+    if (Ppx < 700) Ppx = Ppx + 100;
+    else if (Ppx == 700) Ppx = 700;
   }
 }
 
